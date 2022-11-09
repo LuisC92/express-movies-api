@@ -1,5 +1,5 @@
 const express = require("express");
-const router = require("./routes");
+const routerMovie = require("./routes-movie");
 const cors = require("cors")
 
 require("dotenv").config();
@@ -13,6 +13,6 @@ app.get("/", (req, res) => {
     console.log("A new request just hit the API !");
     res.send("Hello dear API client :)");
 });
-app.use(router)
+app.use("/movies",routerMovie)
 // listen to incoming requests
 app.listen(serverPort, () => console.log("Express server is running"));
